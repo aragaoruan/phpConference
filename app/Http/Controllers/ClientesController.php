@@ -18,4 +18,10 @@ class ClientesController extends Controller
 
         return $view;
     }
+
+    public function add(){
+        $view = view('clientes.add');
+
+        return $view;
+    }
 }

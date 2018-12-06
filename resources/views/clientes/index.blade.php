@@ -1,26 +1,29 @@
-
-@extends('layout.app')
+@extends('layouts.app')
 
 @section('content')
-    <table>
-        <thead>
+
+    <div style="text-align: right">
+        <a href="{!! route('clientes-add') !!}">Novo Registro</a>
+    </div>
+
+
+    <table width="100%" border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>CPF</th>
+        </tr>
+
+        @foreach($clientes AS $cliente)
             <tr>
-                <td>ID</td>
-                <td>Nome</td>
-                <td>Telefone</td>
-                <td>CPF</td>
-            </tr>
-        </thead>
-        @foreach( $clientes as $cliente)
-            <tbody>
                 <td>{!! $cliente->id !!}</td>
-                <td>{!! $cliente->name !!}</td>
+                <td>{!! $cliente->nome !!}</td>
                 <td>{!! $cliente->telefone !!}</td>
                 <td>{!! $cliente->cpf !!}</td>
-            </tbody>
+            </tr>
 
         @endforeach
-
     </table>
 
 @stop

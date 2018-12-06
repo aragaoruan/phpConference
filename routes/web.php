@@ -16,6 +16,16 @@ Route::get('/', function () {
 });
 
 Route::get('/clientes', function () {
+
+
+    $cliente = new \App\Clientes();
+
+    $cliente->name = 'Ruan Aragao Rocha';
+    $cliente->cpf = '039.205.071-42';
+    $cliente->telefone = '(61) 99183-2955';
+    $cliente->email = 'aragao.ruan@gmail.com';
+    $cliente->save();
+
     return ' FIM CLIENTES ';
 });
 

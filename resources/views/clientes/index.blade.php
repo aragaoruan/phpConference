@@ -1,29 +1,39 @@
 @extends('layout.app')
 
 @section('content')
+    <div style="margin: 20px 50px">
 
-    <div style="text-align: right">
-        <a href="{!! route('clientes-add') !!}">Novo Registro</a>
-    </div>
+        <div style="text-align: right">
+            <a href="{!! route('clientes-add') !!}">Novo Registro</a>
+        </div>
 
 
-    <table width="100%" border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Telefone</th>
-            <th>CPF</th>
-        </tr>
-
-        @foreach($clientes AS $cliente)
+        <table width="100%" border="1">
             <tr>
-                <td>{!! $cliente->id !!}</td>
-                <td>{!! $cliente->name !!}</td>
-                <td>{!! $cliente->telefone !!}</td>
-                <td>{!! $cliente->cpf !!}</td>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>CPF</th>
+                <th>Ações</th>
             </tr>
 
-        @endforeach
-    </table>
+            @foreach($clientes AS $cliente)
+                <tr>
+                    <td>{!! $cliente->id !!}</td>
+                    <td>{!! $cliente->name !!}</td>
+                    <td>{!! $cliente->telefone !!}</td>
+                    <td>{!! $cliente->cpf !!}</td>
+                    <td>
+                        <a href="{!! route('clientes-edit', ['id' => $cliente->id]) !!}"
+                           class="btn btn-info">
+                            E
+                        </a>
+                    </td>
+                </tr>
+
+            @endforeach
+
+        </table>
+    </div>
 
 @stop

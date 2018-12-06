@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.app')
 
 @section('content')
 
@@ -18,7 +18,7 @@
         @foreach($clientes AS $cliente)
             <tr>
                 <td>{!! $cliente->id !!}</td>
-                <td>{!! $cliente->nome !!}</td>
+                <td>{!! $cliente->name !!}</td>
                 <td>{!! $cliente->telefone !!}</td>
                 <td>{!! $cliente->cpf !!}</td>
             </tr>
